@@ -1,0 +1,22 @@
+<div class="col-md-4">
+  <div class="list-group">
+
+    <!-- "Section for Creating Artist"-->
+    <div class="list-group-item">
+      <input type="text" class="new-artist" placeholder="New Artist" value=newName>
+      <button class="btn btn-primary btn-sm new-artist-button" (click)="createArtist(newName)">Add</button>
+    </div>
+
+    <!-- "Section for Listing Artist"-->
+    <li *ngFor="let artist of artists" class="list-group-item artist-link" (click)="showArtist(artist)">
+      {{artist.name}}
+      <span class="pointer glyphicon glyphicon-chevron-right"></span>
+    </li>
+
+  </div>
+</div>
+
+<div class="col-md-8" *ngIf="selectedArtist">
+  <artist-songs [artist]="selectedArtist">
+  </artist-songs>
+</div>

@@ -1,0 +1,17 @@
+.new-artist {
+  width: 70%;
+}
+
+.new-artist-button {
+  margin-left: 2em;
+  padding: 3px 10px;
+}
+
+.artist-link .pointer {
+  float: right;
+  display: none;
+}
+
+.artist-link .active .pointer {
+  display: block;
+}

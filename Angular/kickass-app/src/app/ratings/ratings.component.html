@@ -1,0 +1,12 @@
+<!--{{#each stars}}-->
+<!--<span-->
+<!--{{bind-attr class=":star-rating :glyphicon full:glyphicon-star:glyphicon-star-empty"}}-->
+<!--{{action "setRating" rating}}>-->
+<!--</span>-->
+<!--{{/each}}-->
+
+<!--<span>-->
+<span *ngFor="let star of starsData"
+      class = "glyphicon"
+      [ngClass]="star.full ? 'glyphicon-star' : 'glyphicon-star-empty' ">
+</span>

@@ -1,0 +1,15 @@
+<div class="list-group">
+  <div class="list-group-item">
+    <!-- "Section for Creating Songs"-->
+    <input type="text" class="new-artist" placeholder=newSongPlaceholder>
+    <button class="btn btn-primary btn-sm new-song-button" (click)="createSong()">Add</button>
+  </div>
+
+  <div *ngFor="let song of artist.songs" class="list-group-item">
+    {{song.title}}
+    <song-rating
+      style="float: right"
+      [rating]="song.rating"
+    ></song-rating>
+  </div>
+</div>

@@ -16,7 +16,7 @@
 	    <div class="container">
 	      <div class="page-header">
 	        {{#link-to "index"}}
-	          <h1>Stupid App<small> with Ember.js</small></h1>
+	          <h1>My Greatest App<small> with Ember.js</small></h1>
 	        {{/link-to}}
 	      </div>
 	      <div class="row">
@@ -49,10 +49,10 @@
 
 	    <!--"Anything in artist/index goes here" -->
 	    <div class="col-md-8">
-	      <div class="list-group">
-	        {{outlet}}
-	      </div>
-	    </div>
+		<div class="list-group">
+			{{outlet}}
+		</div>
+	</div>
   	</script>
 
 
@@ -62,31 +62,33 @@
 
   	<!--The handlebar template for songs, it is linked from each artist. This uses a web compoment to display star ratings(star-rating) -->
 
-  	<script type="text/x-handlebars" data-template-name="artist/songs">
+	<script type="text/x-handlebars" data-template-name="artist/songs">
 
-  	<div class="list-group-item">
+		<div class="list-group-item">
 
-  		<!-- "Section for Creating Songs"-->
-        {{input type="text" class="new-artist" placeholder=newSongPlaceholder value=newTitle insert-newline="createSong" }}
-        <button class="btn btn-primary btn-sm new-song-button" {{action "createSong"}}>Add
-        </button>
-      </div>
+			<!-- "Section for Creating Songs"-->
+			{{input type="text" class="new-artist" placeholder=newSongPlaceholder value=newTitle
+			insert-newline="createSong" }}
+			<button class="btn btn-primary btn-sm new-song-button" {{action
+			"createSong"}}>Add
+			</button>
+		</div>
 
-      <!-- "Section for Listing Songs"-->
-	  {{#each}}
-	    <div class="list-group-item">
-	      {{title}}
-	      {{star-rating item=this rating=rating maxRating=5 setAction="setRating"}}
-	    </div>
-	  {{/each}}
+		<!-- "Section for Listing Songs"-->
+		{{#each}}
+		<div class="list-group-item">
+			{{title}}
+			{{star-rating item=this rating=rating maxRating=5 setAction="setRating"}}
+		</div>
+		{{/each}}
 
-	  {{#if songlistEmpty}}
-	  	<div class="list-group-item empty-list">
-          <div class="empty-message">
- 				There are no {{artist.name}} songs.	
-           </div>
-        </div>
-	  {{/if}}
+		{{#if songlistEmpty}}
+		<div class="list-group-item empty-list">
+			<div class="empty-message">
+				There are no {{artist.name}} songs.
+			</div>
+		</div>
+		{{/if}}
 
 	</script>
 
